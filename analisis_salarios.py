@@ -2,8 +2,8 @@
 import pandas as pd
 
 # Parámetros del análisis
-PORCENTAJE_BONO = 0.10
-UMBRAL_SALARIO_ALTO = 5.0
+PORCENTAJE_BONO = 0.15
+UMBRAL_SALARIO_ALTO = 4.5
 
 datos = {
     "Nombre": ["Mariana", "Esteban", "Camilo", "Juliana", "Nicolas", "Paula",
@@ -22,8 +22,9 @@ df["Bono"] = df["Salario"] * PORCENTAJE_BONO
 df["SalarioAlto"] = df["Salario"] > UMBRAL_SALARIO_ALTO
 
 # Resumen por departamento
-resumen = df.groupby("Departamento")["Salario"].mean()
+resumen = df.groupby("Departamento")["Salario"].median()
 
 print(df[["Nombre", "Departamento", "Salario", "Bono", "SalarioAlto"]])
 print("\nResumen por departamento:")
 print(resumen)
+print("\nEmpleados con salario alto:", df["SalarioAlto"].sum())
