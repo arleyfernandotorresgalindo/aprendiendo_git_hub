@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Parámetros del análisis
-PORCENTAJE_BONO = 0.08
+PORCENTAJE_BONO = 0.12
 UMBRAL_SALARIO_ALTO = 4.5
 
 datos = {
