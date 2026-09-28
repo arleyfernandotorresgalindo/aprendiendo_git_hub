@@ -22,7 +22,7 @@ df["Bono"] = df["Salario"] * PORCENTAJE_BONO
 df["SalarioAlto"] = df["Salario"] > UMBRAL_SALARIO_ALTO
 
 # Resumen por departamento
-resumen = df.groupby("Departamento")["Salario"].agg(["mean", "max"])
+resumen = df.groupby("Departamento")["Salario"].agg(["mean", "median", "max"])
 
 print(df[["Nombre", "Departamento", "Salario", "Bono", "SalarioAlto"]])
 print("\nResumen por departamento:")
